@@ -15,30 +15,33 @@ body{
     text-align:center;
 }
 
-/* Fade in main content */
+/* Main container */
 .container{
     position:relative;
     top:20%;
     animation: fadeIn 3s ease-in-out;
 }
 
+/* Title animation */
 h1{
     color:white;
     font-size:60px;
-    animation: pop 2s ease-in-out infinite;
+    animation: pop 2s infinite;
 }
 
+/* Name */
 h2{
     color:white;
     font-size:35px;
 }
 
+/* Message */
 p{
     color:white;
     font-size:22px;
 }
 
-/* Button animation */
+/* Button */
 button{
     padding:15px 25px;
     font-size:18px;
@@ -53,18 +56,17 @@ button:hover{
     transform:scale(1.2);
 }
 
-/* Floating balloons */
+/* Balloons */
 .balloon{
     position:absolute;
     bottom:-150px;
     width:40px;
     height:55px;
-    background:red;
     border-radius:50%;
     animation: floatUp 8s linear infinite;
 }
 
-/* Floating hearts */
+/* Hearts */
 .heart{
     position:absolute;
     color:white;
@@ -93,21 +95,33 @@ button:hover{
 <body>
 
 <div class="container">
-    <h1>🎉 Happy Birthday 🎉</h1>
-    <h2>Noeme Gojo ❤️</h2>
-    <p>Wishing you happiness, success, and love always 🎂🎈</p>
 
-    <button onclick="surprise()">🎁 Click For Surprise</button>
+<h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+
+<h2>Noeme Gojo ❤️</h2>
+
+<p>
+🎂 Happy Birthday Noeme! 🎂<br><br>
+
+From your loyal classmate<br>
+and handsome friend ❤️<br><br>
+
+<strong>Christian Grefaldo</strong>
+</p>
+
+<button onclick="surprise()">🎁 Click For Surprise</button>
+
 </div>
 
 <script>
-// Popup surprise
+
+// Popup message
 function surprise(){
-    alert("🎉 Happy Birthday Noeme Gojo! 🎂\n\nYou are special and loved! ❤️");
+    alert("🎉 Happy Birthday Noeme Gojo! 🎂\n\nWishing you happiness, success, love, and good health always! ❤️");
 }
 
-// Create balloons
-for(let i=0;i<10;i++){
+// Balloons
+for(let i=0;i<12;i++){
     let b=document.createElement("div");
     b.className="balloon";
     b.style.left=Math.random()*100+"%";
@@ -116,7 +130,7 @@ for(let i=0;i<10;i++){
     document.body.appendChild(b);
 }
 
-// Create hearts
+// Hearts
 for(let i=0;i<15;i++){
     let h=document.createElement("div");
     h.className="heart";
@@ -126,6 +140,7 @@ for(let i=0;i<15;i++){
     h.style.animationDuration=(4+Math.random()*4)+"s";
     document.body.appendChild(h);
 }
+
 </script>
 
 </body>
