@@ -1,1 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Noeme Gojo</title>
 
+<style>
+body{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background: linear-gradient(135deg,#ff4e50,#ff9a9e);
+    font-family: Arial;
+    text-align:center;
+}
+
+/* Fade in main content */
+.container{
+    position:relative;
+    top:20%;
+    animation: fadeIn 3s ease-in-out;
+}
+
+h1{
+    color:white;
+    font-size:60px;
+    animation: pop 2s ease-in-out infinite;
+}
+
+h2{
+    color:white;
+    font-size:35px;
+}
+
+p{
+    color:white;
+    font-size:22px;
+}
+
+/* Button animation */
+button{
+    padding:15px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:gold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.2);
+}
+
+/* Floating balloons */
+.balloon{
+    position:absolute;
+    bottom:-150px;
+    width:40px;
+    height:55px;
+    background:red;
+    border-radius:50%;
+    animation: floatUp 8s linear infinite;
+}
+
+/* Floating hearts */
+.heart{
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation: floatUp 6s linear infinite;
+}
+
+/* Animations */
+@keyframes floatUp{
+    0%{transform:translateY(0); opacity:1;}
+    100%{transform:translateY(-110vh); opacity:0;}
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes pop{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎉 Happy Birthday 🎉</h1>
+    <h2>Noeme Gojo ❤️</h2>
+    <p>Wishing you happiness, success, and love always 🎂🎈</p>
+
+    <button onclick="surprise()">🎁 Click For Surprise</button>
+</div>
+
+<script>
+// Popup surprise
+function surprise(){
+    alert("🎉 Happy Birthday Noeme Gojo! 🎂\n\nYou are special and loved! ❤️");
+}
+
+// Create balloons
+for(let i=0;i<10;i++){
+    let b=document.createElement("div");
+    b.className="balloon";
+    b.style.left=Math.random()*100+"%";
+    b.style.background=["red","blue","yellow","green","purple"][Math.floor(Math.random()*5)];
+    b.style.animationDuration=(5+Math.random()*5)+"s";
+    document.body.appendChild(b);
+}
+
+// Create hearts
+for(let i=0;i<15;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"%";
+    h.style.bottom="0px";
+    h.style.animationDuration=(4+Math.random()*4)+"s";
+    document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
